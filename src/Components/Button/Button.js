@@ -2,9 +2,12 @@ import * as React from 'react'
 import "./style.css";
 
 const Button = (props) => {
-    const {title, onClick} = props;
+    const {title, onClick, isDisabled} = props;
+
+    const disabledStyle = isDisabled ?  {backgroundColor: 'grey'} : {}
+   
     return (
-        <button class="button-class" onClick={onClick}>{title}</button>
+        <button className="button-class" style={disabledStyle} onClick={onClick}>{title}</button>
     )
 }
 
